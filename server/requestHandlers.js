@@ -81,5 +81,5 @@ function getService(url, response) {
 }
 
 exports.iniciar = iniciar;
-exports.subir = subir;
+// exports.subir = subir;
 exports.medicamentos = medicamentos;

@@ -1,7 +1,8 @@
 var http = require("http");
 var url = require("url");
-var express = require('express');
-var app = express(); 
+var express = require("express");
+var app = express();
+var path = require("path");
 
 function iniciar(route, handle) {
     function onRequest(request, response) {
@@ -28,9 +29,17 @@ function iniciar(route, handle) {
     console.log("Servidor Iniciado.");
 }
 
-app.get('*', function (req, res) {
-    res.sendfile('../vista/index.html');
-    console.log("Hola Mundo ")
-});
+function iniciarCliente() {
+    // viewed at http://localhost:8080
+    app.get('/', function (req, res) {
+        var indexView = 
+        res.sendFile(path.join(__dirname, '../client/', 'index.html'));
+    });
+
+    app.use(express.static(path.join(__dirname, '../client/')));
+
+    app.listen(8080);   
+}
 
 exports.iniciar = iniciar;
+exports.iniciarCliente = iniciarCliente;

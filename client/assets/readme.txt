@@ -1,0 +1,1 @@
+create in assets folders like img/ /css /js /libs

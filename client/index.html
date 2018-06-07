@@ -1,85 +1,56 @@
 <!-- index.html -->
-<!doctype html>
-
-<!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchTodo">
+<!DOCTYPE html>
+<html ng-app="medApp">
 
 <head>
-    <!-- META -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Optimize mobile viewport -->
-
-    <title>Node/Angular Todo App</title>
-
     <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <!-- load bootstrap -->
-    <style>
-        html {
-            overflow-y: scroll;
-        }
-
-        body {
-            padding-top: 50px;
-        }
-
-        #todo-list {
-            margin-bottom: 30px;
-        }
-    </style>
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 
     <!-- SPELLS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <!-- load jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <!-- load angular -->
-    <script src="core.js"></script>
-
+    <!-- load angular and angular route via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="./app/app.module.js" type="text/javascript"></script>
+    <script src="./app/app.routes.js" type="text/javascript"></script>
+    <script src="./app/components/home/homeController.js" type="text/javascript"></script>
 </head>
-<!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
-<body ng-controller="mainController">
-    <div class="container">
+<body ng-controller="homeController">
 
-        <!-- HEADER AND TODO COUNT -->
-        <div class="jumbotron text-center">
-            <h1>I'm a Todo-aholic
-                <span class="label label-info">{{ todos.length }}</span>
-            </h1>
-        </div>
-
-        <!-- TODO LIST -->
-        <div id="todo-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox" ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                    </label>
+    <!-- HEADER AND NAVBAR -->
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Routing Example</a>
                 </div>
 
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <i class="fa fa-shield"></i> About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <i class="fa fa-comment"></i> Contact</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <!-- FORM TO CREATE TODOS -->
-        <div id="todo-form" class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form>
-                    <div class="form-group">
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
 
-                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever"
-                            ng-model="formData.text">
-                    </div>
-
-                    <!-- createToDo() WILL CREATE NEW TODOS -->
-                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-                </form>
-            </div>
-        </div>
-
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        {{message}}
     </div>
 
 </body>
