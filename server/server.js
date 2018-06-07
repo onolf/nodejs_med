@@ -32,7 +32,6 @@ function iniciar(route, handle) {
 function iniciarCliente() {
     // viewed at http://localhost:8080
     app.get('/', function (req, res) {
-        var indexView = 
         res.sendFile(path.join(__dirname, '../client/', 'index.html'));
     });
 

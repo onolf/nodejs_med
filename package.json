@@ -1,13 +1,21 @@
 {
   "name": "nodejs_med",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modulos principales de la app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onolf/nodejs_med.git"
+  },
   "author": "Odilon Nolf",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onolf/nodejs_med/issues"
+  },
+  "homepage": "https://github.com/onolf/nodejs_med#readme",
   "dependencies": {
     "express": "^4.16.3"
   }
