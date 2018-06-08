@@ -16,7 +16,7 @@
     <script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="./node_modules/angular-resource/angular-resource.js" type="text/javascript"></script>
     <script src="./app/app.module.js" type="text/javascript"></script>
-    <script src="./app/app.state.js" type="text/javascript"></script>
+    <script src="./app/app.routes.js" type="text/javascript"></script>
     <!-- <script src="./app/app.routes.js" type="text/javascript"></script> -->
     <script src="./app/shared/path.js" type="text/javascript"></script>
     <script src="./app/components/home/home.state.js" type="text/javascript"></script>
@@ -24,14 +24,14 @@
     <script src="./app/components/home/homeController.js" type="text/javascript"></script>
 </head>
 
-<body ng-controller="homeController">
+<!-- <body> -->
 
     <!-- HEADER AND NAVBAR -->
     <header>
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                    <a class="navbar-brand" href="/">Datos de medicamentos</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -58,6 +58,7 @@
         <!-- angular templating -->
         <!-- this is where content will be injected -->
         {{message}}
+        <div ui-view></div>
     </div>
 
 </body>

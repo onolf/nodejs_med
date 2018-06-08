@@ -70,7 +70,12 @@ function getService(url, response) {
             try {
                 const parsedData = JSON.parse(rawData);
                 console.log(contentType);
-                response.writeHead(statusCode, { "Content-Type": contentType });
+                response.writeHead(statusCode, {
+                    "Content-Type": contentType,
+                    'Access-Control-Allow-Origin': 'http://localhost:8080',
+                    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+                    'Access-Control-Allow-Headers': 'X-Requested-With,content-type'
+                });
                 response.write(rawData);
                 response.end();
             } catch (e) {

@@ -3,6 +3,7 @@ var url = require("url");
 var express = require("express");
 var app = express();
 var path = require("path");
+var exec = require("child_process").exec;
 
 function iniciar(route, handle) {
     function onRequest(request, response) {
@@ -40,5 +41,10 @@ function iniciarCliente() {
     app.listen(8080);   
 }
 
+function iniciarJsonServer(params) {
+    exec("json-server ../data/disponibilidad_medicamentos.json");
+}
+
 exports.iniciar = iniciar;
 exports.iniciarCliente = iniciarCliente;
+exports.iniciarJsonServer = iniciarJsonServer;

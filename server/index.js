@@ -6,5 +6,6 @@ var handle = {};
 handle["/"] = requestHandlers.iniciar;
 handle["/medicamentos"] = requestHandlers.medicamentos;
 
+server.iniciarJsonServer();
 server.iniciar(router.route, handle);
 server.iniciarCliente();
