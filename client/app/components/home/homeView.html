@@ -1,14 +1,51 @@
-<html>
-    <head></head>
-    <body>
-        <h4>Tabla de medicamentos disponibles</h4>
-        <table>
+<div class="container">
+    <h4 class="mt-1rem">Tabla de medicamentos disponibles</h4>
+    <div class="text-right">Total: {{total}}</div>
+    <div class="table-border-grey mb-1rem">
+        <table class="table table-striped margin-zero">
+            <tr>
+                <th>C&oacute;digo</th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Disponibilidad</th>
+            </tr>
             <tr ng-repeat="medicina in medicamentos">
                 <td>{{ medicina.codigoProducto }}</td>
                 <td>{{ medicina.nombreProducto }}</td>
-                <td>{{ medicina.fecha }}</td>
+                <td>{{ medicina.fecha | date:'dd/MM/yyyy'}}</td>
                 <td>{{ medicina.disponible }}</td>
             </tr>
         </table>
-    </body>
-</html>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center" ng-click="managePagination($event)">
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-previous" href="#">Anterior</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-1" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-2" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-3" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-4" href="#">4</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-5" href="#">5</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-6" href="#">6</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-7" href="#">7</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" id="pag-tab-8" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+</div>
