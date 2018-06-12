@@ -20,4 +20,4 @@ userName: admin
 password: 12345
 ```
 Este consume del json-server que ya es ejecutado al iniciar el servidor.
-* En el postman esta escrita la llamada a este servicio.
+* En el postman puede probarse la llamada a este servicio.
