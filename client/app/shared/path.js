@@ -5,6 +5,7 @@ path.$inject = [];
 function path() {
     return {
         BASE: "http://localhost:8888",
-        medicamentos: "/medicamentos"
+        medicamentos: "/medicamentos",
+        medicamentosTotal: "/medicamentos/total"
     }
 }

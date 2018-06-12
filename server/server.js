@@ -22,7 +22,7 @@ function iniciar(route, handle) {
         });
 
         request.addListener("end", function () {
-            route(handle, pathname, response, query);
+            route(handle, pathname, response, query, dataPosteada);
         });
     }
 
@@ -42,7 +42,7 @@ function iniciarCliente() {
 }
 
 function iniciarJsonServer(params) {
-    exec("json-server ../data/disponibilidad_medicamentos.json");
+    exec("json-server ./data/disponibilidad_medicamentos.json");
 }
 
 exports.iniciar = iniciar;

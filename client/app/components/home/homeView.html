@@ -17,34 +17,16 @@
             </tr>
         </table>
     </div>
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" ng-show="totalPage > 1">
         <ul class="pagination justify-content-center" ng-click="managePagination($event)">
             <li class="page-item">
-                <a class="page-link" id="pag-tab-previous" href="#">Anterior</a>
+                <a class="page-link" id="pag-tab-first" href="#">Primero</a>
+            </li>
+            <li class="page-item" ng-repeat="page in pages">
+                <a class="page-link" id="pag-tab-{{page}}" href="#">{{page}}</a>
             </li>
             <li class="page-item">
-                <a class="page-link" id="pag-tab-1" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-2" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-3" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-4" href="#">4</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-5" href="#">5</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-6" href="#">6</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-7" href="#">7</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" id="pag-tab-8" href="#">Siguiente</a>
+                <a class="page-link" id="pag-tab-last" href="#">&Uacute;ltimo</a>
             </li>
         </ul>
     </nav>

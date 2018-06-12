@@ -17,10 +17,8 @@ function homeService(path, $resource) {
         },
         getMedicamentosTotal: {
             method: 'GET',
-            url: urlAPI + path.medicamentos,
-            params: {
-                'total' : '#'
-            },
+            url: urlAPI + path.medicamentosTotal,
+            params: {},
             isArray: false
         }
     });
