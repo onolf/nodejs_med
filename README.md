@@ -1,7 +1,14 @@
 # nodejs_med
 Para correr la aplicacion:
-* Instalado el nodejs; correr el comando siguiente en el directorio raiz 
+* Instalado el nodejs, instalar el paquete "json-server" que servirá como un servidor
+interno que alimentará a los servicios invocados al servidor nodejs. Ejecutar desde 
+la terminal (cmd en windows) el siguiente comando para instalarlo en el sistema operativo: 
 ```
+npm install -g json-server
+```
+* Correr el comando siguiente en el directorio raiz, (dentro de **/node_med**)
+```
+cd node_med
 node server\index.js
 ```
 * En el navegador ingresar la url http://localhost:8080
@@ -19,5 +26,7 @@ el usuario vaya requiriendo, (sea pagina 5, 9, 20, etc.)
 userName: admin
 password: 12345
 ```
-Este consume del json-server que ya es ejecutado al iniciar el servidor.
+_Nota: Este servicio no esta incluido en el front-end._
+
+El mismo consume del json-server que ya es ejecutado al iniciar el servidor.
 * En el postman puede probarse la llamada a este servicio.
