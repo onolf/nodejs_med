@@ -8,7 +8,7 @@ npm install -g json-server
 ```
 * Correr el comando siguiente en el directorio raiz, (dentro de **/node_med**)
 ```
-cd node_med
+cd nodejs_med
 node server\index.js
 ```
 * En el navegador ingresar la url http://localhost:8080
